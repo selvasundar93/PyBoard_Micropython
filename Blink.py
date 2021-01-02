@@ -1,9 +1,7 @@
-from machine import Pin
-p2 = Pin(2, Pin.OUT)
+# Program to blink all the LEDs in PyBoard - forever
 import time
-a=1
-while a==1:
-    p2.on()
-    time.sleep_ms(300)
-    p2.off()
-    time.sleep_ms(300)
+import pyb
+while (1):
+    for i in range(1,5):
+        pyb.LED(i).toggle()
+        time.sleep(1)
